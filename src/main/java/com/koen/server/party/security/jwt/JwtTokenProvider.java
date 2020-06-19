@@ -37,22 +37,22 @@ public class JwtTokenProvider {
         Claims claims = Jwts.claims().setSubject(email);
         Date now = new Date();
         Date validity = new Date(now.getTime() + validityInMilliseconds);
-        return Jwts.builder()//
-                .setClaims(claims)//
-                .setIssuedAt(now)//
-                .setExpiration(validity)//
-                .signWith(SignatureAlgorithm.HS256, secret)//
+        return Jwts.builder()
+                .setClaims(claims)
+                .setIssuedAt(now)
+                .setExpiration(validity)
+                .signWith(SignatureAlgorithm.HS256, secret)
                 .compact();
     }
     public String createToken(String email, long timeValidity) {
         Claims claims = Jwts.claims().setSubject(email);
         Date now = new Date();
         Date validity = new Date(now.getTime() + timeValidity);
-        return Jwts.builder()//
-                .setClaims(claims)//
-                .setIssuedAt(now)//
-                .setExpiration(validity)//
-                .signWith(SignatureAlgorithm.HS256, secret_refresh)//
+        return Jwts.builder()
+                .setClaims(claims)
+                .setIssuedAt(now)
+                .setExpiration(validity)
+                .signWith(SignatureAlgorithm.HS256, secret_refresh)
                 .compact();
     }
     public Authentication getAuthentication(String token) {

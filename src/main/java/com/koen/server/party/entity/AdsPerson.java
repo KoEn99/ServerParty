@@ -61,8 +61,6 @@ public class AdsPerson {
         this.price = price;
     }
 
-
-
     public AuthPerson getAuthPerson() {
         return authPerson;
     }

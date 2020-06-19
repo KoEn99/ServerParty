@@ -2,11 +2,8 @@ package com.koen.server.party.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.koen.server.party.enums.Status;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -94,9 +91,11 @@ public class AuthPerson{
     public void setAttachments1(Set<AdsFavorites> attachments1) {
         this.attachments1 = attachments1;
     }
+
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }

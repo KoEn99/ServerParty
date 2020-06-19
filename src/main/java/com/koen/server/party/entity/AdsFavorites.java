@@ -19,6 +19,7 @@ public class AdsFavorites {
     @ManyToOne
     @JoinColumn(name = "authperson_id", nullable = false)
     private AuthPerson authPerson;
+
     public Long getId() {
         return id;
     }

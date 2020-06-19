@@ -14,7 +14,6 @@ public class AdsSearchDto {
         this.title = title;
     }
 
-
     public String getCity() {
         return city;
     }

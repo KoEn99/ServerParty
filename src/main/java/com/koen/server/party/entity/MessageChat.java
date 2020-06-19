@@ -36,7 +36,6 @@ public class MessageChat {
         this.id = id;
     }
 
-
     public String getMessage() {
         return Message;
     }

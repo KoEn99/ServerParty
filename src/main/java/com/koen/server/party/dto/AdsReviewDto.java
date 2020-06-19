@@ -8,7 +8,6 @@ import java.util.List;
 public class AdsReviewDto {
     List<AdsReviews> adsReviewList = new ArrayList<>();
 
-
     public List<AdsReviews> getAdsReviewList() {
         return adsReviewList;
     }

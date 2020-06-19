@@ -2,20 +2,13 @@ package com.koen.server.party.service;
 
 import com.koen.server.party.entity.AuthPerson;
 import com.koen.server.party.entity.ProfilePerson;
-import com.koen.server.party.enums.Status;
 import com.koen.server.party.repository.AuthPersonRepository;
 import com.koen.server.party.repository.ProfilePersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.List;
 import java.util.UUID;
 
 @Service

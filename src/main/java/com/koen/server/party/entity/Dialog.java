@@ -14,6 +14,7 @@ public class Dialog {
     private String did;
     @OneToMany(mappedBy = "dialog", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private Set<RoomChat> roomChats = new HashSet<RoomChat>();
+
     public String getDid() {
         return did;
     }

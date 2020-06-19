@@ -44,13 +44,9 @@ public class ChatController {
         MessageChat messageChat = new MessageChat();
         messageChat.setTime(messageChatDto.getTime());
         messageChat.setDid(messageChatDto.getDid());
-        //messageChat.setAuthPerson_to(messageChatDto.getAuthPerson_to());
         messageChat.setMessage(messageChatDto.getMessage());
         messageChat.setAuthPerson_from(authPerson);
         messageChat.setImageMessage(messageChatDto.getImageMessage());
-     //  RoomChat roomChat = roomChatRepository.findByEmailFromAndEmailTo(messageChat.getAuthPerson_from(),
-      //          messageChat.getAuthPerson_to());
-      //  if (roomChat != null) messageChat.setDid(roomChat.getDid());
         messageChatService.save(messageChat);
         messageChat.setFio(authPerson.getProfilePerson().getName() + " " +
                 authPerson.getProfilePerson().getMiddleName());
@@ -105,7 +101,6 @@ public class ChatController {
         List<RoomChat> roomChatList = roomChatRepository.findAllByEmailFrom(authPerson);
        List<MyChatsDto> myChatsDtoList = new ArrayList<>();
         for (int i = 0; i < roomChatList.size(); i++){
-         //   AuthPerson authPerson_chats = authPersonRepository.findByEmail(roomChatList.get(i).getEmailTo());
             RoomChat[] roomChatsBuffer = {};
             roomChatsBuffer = roomChatList.get(i).getDialog().getRoomChats().
                     toArray(new RoomChat[roomChatList.get(i).getDialog().getRoomChats().size()]);

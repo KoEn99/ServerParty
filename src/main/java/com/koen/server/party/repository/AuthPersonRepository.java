@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface AuthPersonRepository extends JpaRepository<AuthPerson, Long> {
-
     AuthPerson findByEmail(String email);
     AuthPerson findAuthPersonByEmail(String email);
     AuthPerson findByStatus(String status);

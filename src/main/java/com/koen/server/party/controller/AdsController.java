@@ -80,7 +80,6 @@ public class AdsController{
         adsPerson.setCity(adsPersonRequestDto.getCity());
         adsPerson.setCategory(adsPersonRequestDto.getCategory());
         adsPerson.setPrice(adsPersonRequestDto.getPrice());
-        //    adsPerson.setAuthPerson(adsPersonRequestDto.getAuthPerson());
         adsPerson.setAdsProfile(adsPersonRequestDto.getAdsProfile());
         adsPerson.setAuthPerson(authPersonRepository.findByEmail(userDetails.getEmail()));
         adsPerson.getAdsProfile().setAdsPerson(adsPerson);
@@ -134,7 +133,6 @@ public class AdsController{
         AdsPerson adsPerson1 = adsPerson.get();
         adsService.save(adsPerson1);
         List<AdsImage> adsImageList = adsImageRepository.findByAdsPerson_Id(adsPersonRequestDto.getId());
-       // AdsPerson email = adsImageList.get(0).getAdsPerson();
         for (int i = 0; i < adsPersonRequestDto.getAdsImages().size(); i++){
             AdsImage adsImage = new AdsImage();
             if (i < adsImageList.size()) adsImage.setId(adsImageList.get(i).getId());
@@ -170,7 +168,6 @@ public class AdsController{
             }
             String uuifile = UUID.randomUUID().toString();
             filename = uuifile + "." + file.getOriginalFilename();
-          //  file.transferTo(new File(uploadpath+ "/" +filename));
             byte[] bytes = file.getBytes();
             BufferedOutputStream stream =
                     new BufferedOutputStream(new FileOutputStream(new File(uploadpath + "/" + filename)));
@@ -199,17 +196,12 @@ public class AdsController{
             produces = MediaType.ALL_VALUE
     )
     public @ResponseBody byte[] getImageAsByteArray(@PathVariable("fileName") String fileName) throws IOException {
-        //InputStream in = servletContext.getResourceAsStream( " C:\\Users\\butus\\Pictures\\server\\"+ fileName);
         InputStream in = new FileInputStream(uploadpath + "/" + fileName);
-        //    InputStream in = getClass().getResourceAsStream(uploadpath + "/" + fileName);
         return IOUtils.toByteArray(in);
     }
     @RequestMapping(value = "/search", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity searchAds(@RequestBody AdsSearchDto adsSearchDto){
-     //   Sort sort = new Sort(Sort.Direction.DESC, "firstName");
-      //  List<AdsPerson> adsPeople = adsRepository.findByTitleContainingAndCity(title, city, Sort.by("price"));
-      //  List<AdsPerson> adsPeople = adsRepository.findByTitleContainingAndCity(title, city, Sort.by("id"));
         List<AdsPerson> adsPeople;
         if (adsSearchDto.getCategory().equals("")) {
             adsPeople = searchWithoutCategory(adsSearchDto.getTitle(), adsSearchDto.getCity(), adsSearchDto.getSort());

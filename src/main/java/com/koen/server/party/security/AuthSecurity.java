@@ -21,20 +21,5 @@ public class AuthSecurity  {
     AuthPersonRepository authPersonRepository;
     @Autowired
     PasswordEncoder passwordEncoder;
- /*   @Override
-    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        String email = authentication.getName();
-        AuthPerson authPerson = authPersonRepository.findByEmail(email);
-        if (authPerson == null){
-            throw new UsernameNotFoundException("Don't found user");
-        }
-        String password = (String) authentication.getCredentials();
-        if (!passwordEncoder.matches(password, authPerson.getPassword())){
-            throw new BadCredentialsException("Пароли не совпадают");
-        }
-        List<GrantedAuthority> authorityList = new ArrayList<>();
-        return new UsernamePasswordAuthenticationToken(authPerson, null, authorityList);
-    }
-*/
 
 }
