@@ -290,7 +290,7 @@ public class AdsController{
     }
     @RequestMapping(value = "/remove", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity setRating(@RequestBody AdsRemoveDto adsRemovedto){
+    public ResponseEntity removeAds(@RequestBody AdsRemoveDto adsRemovedto){
         Optional<AdsPerson> adsPerson =  adsRepository.findById(adsRemovedto.getId());
         for (int i = 0; i < adsPerson.get().getAttachments().size(); i++){
             File file = new File(uploadpath + "/" + adsPerson.get().getAttachments().get(i).getFilename());
@@ -308,7 +308,7 @@ public class AdsController{
     }
     @RequestMapping(value = "/my", method = RequestMethod.GET)
     @ResponseBody
-    public List<AdsPerson> getRating(){
+    public List<AdsPerson> getMyAds(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         JwtUser userDetails = (JwtUser) authentication.getPrincipal();
         List<AdsPerson> adsPersonList = adsRepository.findByAuthPerson_Email(userDetails.getEmail());
