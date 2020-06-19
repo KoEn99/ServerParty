@@ -4,6 +4,6 @@ import com.koen.server.party.entity.AuthPerson;
 import com.koen.server.party.entity.ProfilePerson;
 
 public interface ServiceController {
-    public void save(Object object);
-    public void remove(Object object);
+    void save(Object object);
+    void remove(Object object);
 }

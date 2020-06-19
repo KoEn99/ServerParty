@@ -167,7 +167,6 @@ public class AuthController{
           }
           String uuifile = UUID.randomUUID().toString();
           filename = uuifile + "." + file.getOriginalFilename();
-          //  file.transferTo(new File(uploadpath+ "/" +filename));
           byte[] bytes = file.getBytes();
           BufferedOutputStream stream =
                   new BufferedOutputStream(new FileOutputStream(new File(uploadpath + "/" + filename)));

@@ -13,7 +13,6 @@ import java.util.UUID;
 
 @Service
 public class AuthService implements ServiceController {
-
     @Autowired
     private AuthPersonRepository authPersonRepository;
     @Autowired
