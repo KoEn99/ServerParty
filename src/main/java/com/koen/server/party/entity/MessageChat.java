@@ -28,6 +28,7 @@ public class MessageChat {
     @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
     @Transient
     private String fio = "";
+
     public Long getId() {
         return id;
     }

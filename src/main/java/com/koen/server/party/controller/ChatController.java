@@ -40,7 +40,6 @@ public class ChatController {
     @MessageMapping("/send-message")
     public void greeting(MessageChatDto messageChatDto) throws Exception {
         AuthPerson authPerson = authPersonRepository.findByEmail(messageChatDto.getMyEmail());
-        AuthPerson authPerson_to = authPersonRepository.findByEmail(messageChatDto.getAuthPerson_to());
         MessageChat messageChat = new MessageChat();
         messageChat.setTime(messageChatDto.getTime());
         messageChat.setDid(messageChatDto.getDid());

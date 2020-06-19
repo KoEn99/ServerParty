@@ -74,7 +74,7 @@ public class AuthController{
         return new ResponseEntity(HttpStatus.CONFLICT);
     }
     @RequestMapping(value = "/new-password", method = RequestMethod.POST)
-    public ResponseEntity addAccount(@RequestBody PasswordDto passwordDto){
+    public ResponseEntity setPassword(@RequestBody PasswordDto passwordDto){
         String oldPassword = passwordDto.getOldPassword();
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         JwtUser userDetails = (JwtUser) authentication.getPrincipal();
@@ -100,7 +100,7 @@ public class AuthController{
     }
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity addAccount(@RequestBody AuthenticationRequestDto requestDto){
+    public ResponseEntity login(@RequestBody AuthenticationRequestDto requestDto){
         try {
             String email = requestDto.email;
             AuthPerson authPerson = authPersonRepository.findByEmail(email);
@@ -158,7 +158,7 @@ public class AuthController{
   String uploadpath;
   @RequestMapping(value = "/image/load", method = RequestMethod.POST)
   @ResponseBody
-  public ResponseEntity addAccount(@RequestParam("file") MultipartFile file) throws IOException {
+  public ResponseEntity setImage(@RequestParam("file") MultipartFile file) throws IOException {
       String filename = "";
       if (file != null){
           File uploaddir = new File(uploadpath);

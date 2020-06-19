@@ -45,6 +45,7 @@ public class AdsPerson {
     @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
     @Transient
     private Long myFavorite = Long.parseLong("0");
+
     public String getTitle() {
         return title;
     }

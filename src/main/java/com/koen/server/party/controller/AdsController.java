@@ -72,7 +72,7 @@ public class AdsController{
     String uploadpath;
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity addAccount(@RequestBody AdsPersonRequestDto adsPersonRequestDto){
+    public ResponseEntity addAds(@RequestBody AdsPersonRequestDto adsPersonRequestDto){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         JwtUser userDetails = (JwtUser) authentication.getPrincipal();
         AdsPerson adsPerson = new AdsPerson();
@@ -159,7 +159,7 @@ public class AdsController{
     }
     @RequestMapping(value = "/image/load", method = RequestMethod.POST)
     @ResponseBody
-    public Map<Object, Object> addAccount(@RequestParam("file") MultipartFile file) throws IOException {
+    public Map<Object, Object> addImage(@RequestParam("file") MultipartFile file) throws IOException {
         String filename = "";
         if (file != null){
             File uploaddir = new File(uploadpath);
@@ -241,7 +241,7 @@ public class AdsController{
     }
     @RequestMapping(value = "/profile/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity searchAds(@PathVariable long id){
+    public ResponseEntity getProfileAds(@PathVariable long id){
         Optional<AdsPerson> adsPerson = adsRepository.findById(id);
         AuthPerson authPerson = adsPerson.get().getAuthPerson();
         AdsFavorites adsFavorites;

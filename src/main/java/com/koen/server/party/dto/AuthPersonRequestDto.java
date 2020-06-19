@@ -8,7 +8,6 @@ public class AuthPersonRequestDto {
     private String number_phone;
     private String city;
 
-
     public String getName() {
         return name;
     }

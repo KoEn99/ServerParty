@@ -23,7 +23,6 @@ public class MyChatsDto {
         this.avatar = avatar;
     }
 
-
     public String getFio() {
         return fio;
     }

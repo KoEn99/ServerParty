@@ -8,7 +8,5 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface RoomChatRepository extends JpaRepository<RoomChat, Long> {
-
     List<RoomChat> findAllByEmailFrom(AuthPerson emailFrom);
-
 }

@@ -44,6 +44,7 @@ public class AuthPerson{
 
     public AuthPerson() {
     }
+
     public String getEmail() {
         return email;
     }

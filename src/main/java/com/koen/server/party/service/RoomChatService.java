@@ -36,10 +36,7 @@ public class RoomChatService implements ServiceController {
         roomChat.setEmailFrom(authPerson);
         RoomChat roomChatTo = new RoomChat();
         roomChatTo.setEmailFrom(authPerson_to);
-        //List<RoomChat> roomChatList = roomChatRepository.findAllByEmailFromAndEmailTo(roomChat.getEmailFrom().getEmail(),
-         //       roomChat.getEmailTo().getEmail());
         List<RoomChat> roomChatListDid = roomChatRepository.findAllByEmailFrom(roomChat.getEmailFrom());
-   //     List<RoomChat> roomChatListDidTo = roomChatRepository.findAllByEmailFrom(roomChatTo.getEmailFrom().getEmail());
         boolean needCreate = true;
         for (int i = 0; i < roomChatListDid.size(); i++){
             RoomChat[] roomChatsBuffer = {};
@@ -56,8 +53,6 @@ public class RoomChatService implements ServiceController {
                 break;
             }
         }
-
-
         if (needCreate == true) {
             String UUIDstr = java.util.UUID.randomUUID().toString();
             UUIDstr = UUIDstr.substring(0,8);

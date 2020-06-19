@@ -33,7 +33,6 @@ public class AdsProfileDto {
         this.myFavorite = myFavorites;
     }
 
-
     public long getId() {
         return id;
     }

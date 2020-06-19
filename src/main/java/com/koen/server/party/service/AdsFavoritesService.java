@@ -19,6 +19,5 @@ public class AdsFavoritesService  implements  ServiceController{
     public void remove(Object object) {
         AdsFavorites adsFavorites = (AdsFavorites)object;
         adsFavoritesRepository.deleteById(adsFavorites.getId());
-       //adsFavoritesRepository.delete(adsFavorites);
     }
 }

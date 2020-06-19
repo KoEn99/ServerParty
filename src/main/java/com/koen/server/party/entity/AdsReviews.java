@@ -41,7 +41,6 @@ public class AdsReviews {
         this.content = content;
     }
 
-
     public String getRating() {
         return rating;
     }
