@@ -83,6 +83,7 @@ public class AdsController{
         adsPerson.setAdsProfile(adsPersonRequestDto.getAdsProfile());
         adsPerson.setAuthPerson(authPersonRepository.findByEmail(userDetails.getEmail()));
         adsPerson.getAdsProfile().setAdsPerson(adsPerson);
+        /////
         adsPerson.setRating("0");
         adsService.save(adsPerson);
         for (int i = 0; i < adsPersonRequestDto.getAdsImages().size(); i++){
