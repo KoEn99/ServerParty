@@ -37,7 +37,7 @@
     </build>
     <properties>
         <spring-core.version>5.2.4.RELEASE</spring-core.version>
-        <spring-webmvc.version>5.2.4.RELEASE</spring-webmvc.version>
+        <spring-webmvc.version>5.3.18</spring-webmvc.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
         <spring-data-jpa.version>2.2.5.RELEASE</spring-data-jpa.version>
         <hibernate-entitymanager.version>5.4.12.Final</hibernate-entitymanager.version>
